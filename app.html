@@ -3,14 +3,24 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
   <title>Legacy - Owner Finance | Brokerage By: KLC Real Estate, LLC</title>
-  <meta http-equiv="refresh" content="0; url=https://fixes-democrat-pot-researcher.trycloudflare.com" />
   <script>
     (function() {
-      var target = "https://fixes-democrat-pot-researcher.trycloudflare.com";
-      var params = window.location.search || "";
-      var hash = window.location.hash || "";
-      window.location.replace(target + params + hash);
+      var fallback = "https://fixes-democrat-pot-researcher.trycloudflare.com";
+      var suffix = (window.location.search || "") + (window.location.hash || "");
+      var rawUrl = "https://raw.githubusercontent.com/TheRivasLegacyGroup/casas-disponibles/main/tunnel-url.json?t=" + Date.now();
+      fetch(rawUrl, { cache: "no-store" })
+        .then(function(r) { return r.json(); })
+        .then(function(data) {
+          var target = (data && data.url) ? data.url : fallback;
+          window.location.replace(target + suffix);
+        })
+        .catch(function() {
+          window.location.replace(fallback + suffix);
+        });
     })();
   </script>
 </head>
@@ -18,7 +28,7 @@
   <div>
     <h1 style="font-size: 1.4rem; margin-bottom: 0.5rem;">Legacy - Owner Finance</h1>
     <p style="font-size: 0.85rem; color: #c8a24a; letter-spacing: 0.12em; text-transform: uppercase; margin-top: 0;">Brokerage By: KLC Real Estate, LLC</p>
-    <p style="margin-top: 1.5rem;"><a href="https://fixes-democrat-pot-researcher.trycloudflare.com" style="color: #c8a24a; font-weight: 600;">Tap here if you are not redirected automatically &rarr;</a></p>
+    <p style="margin-top: 1.5rem;"><a id="direct-link" href="https://fixes-democrat-pot-researcher.trycloudflare.com" style="color: #c8a24a; font-weight: 600;">Opening Legacy - Owner Finance... Tap here if not redirected &rarr;</a></p>
   </div>
 </body>
 </html>
